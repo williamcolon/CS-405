@@ -5,12 +5,9 @@
             // CS-499
             //Verrsion 4.1  2024/9/24
 
-
-            //Includes
 #include <iostream>
 #include <string>
 #include <vector>
-#include <ctime>
 #include <regex>
 
 
@@ -66,8 +63,6 @@ public:
         std::cout << "Appointment added successfully!\n";
     }
 
-    // Function to display all appointments
-   // the argorithm make the search more acurate
     void displayAppointments() const {
         if (appointments.empty()) {
             std::cout << "No appointments scheduled.\n";
@@ -82,7 +77,6 @@ public:
         }
     }
 
-    // Function to clear all appointments
     void clearAppointments() {
         appointments.clear();
         std::cout << "All appointments cleared.\n";
@@ -92,31 +86,25 @@ public:
 int main() {
     AppointmentService service;
     int choice;
-    //Menu
     do {
         std::cout << "1. Add Appointment\n2. Display Appointments\n3. Clear Appointments\n4. Exit\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
-        std::cin.ignore(); // To ignore the newline character after the choice input
+        std::cin.ignore(); // Ignore the newline character
 
         switch (choice) {
-            // option 1 Add appoitment
         case 1:
             service.addAppointment();
             break;
-            //Option 2 display appoitments
         case 2:
             service.displayAppointments();
             break;
-            //.option 3 clear appoitments
         case 3:
             service.clearAppointments();
             break;
-            //option 4 exit
         case 4:
             std::cout << "Exiting the appointment service.\n";
             break;
-            //this shows a wrong selection
         default:
             std::cout << "Invalid choice. Please try again.\n";
         }
