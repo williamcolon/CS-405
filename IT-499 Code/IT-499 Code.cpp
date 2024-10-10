@@ -78,8 +78,10 @@ public:
         std::cout << "Appointment added successfully!\n"; // Confirmation message
     }
 
+ IT-499-Appoitments
     // Function to display all scheduled appointments
     // This function iterates over the vector and prints out the details for each appointment
+ master
     void displayAppointments() const {
         // Check if there are any appointments to display
         if (appointments.empty()) {
@@ -96,8 +98,10 @@ public:
         }
     }
 
+ IT-499-Appoitments
     // Function to clear all scheduled appointments
     // This function clears the vector of appointments and notifies the user
+ master
     void clearAppointments() {
         appointments.clear(); // Clear the vector to remove all appointments
         std::cout << "All appointments cleared.\n"; // Confirmation message
@@ -112,18 +116,41 @@ public:
 //In the main function, we instantiate the AppointmentService, add some sample appointments, 
 // and display them, showcasing how the service can be effectively used for appointment management.
 int main() {
+ IT-499-Appoitments
+    AppointmentService service;
+    int choice;
     AppointmentService service; // Create an instance of the AppointmentService
     int choice; // Variable to store user menu choice
     // Menu loop to allow the user to continuously interact with the service
+ master
     do {
         // Display menu options to the user
         std::cout << "1. Add Appointment\n2. Display Appointments\n3. Clear Appointments\n4. Exit\n";
         std::cout << "Enter your choice: ";
+ IT-499-Appoitments
+        std::cin >> choice;
+        std::cin.ignore(); // Ignore the newline character
         std::cin >> choice; // Get user input for menu choice
         std::cin.ignore(); // Ignore the newline character after input
+ master
 
         // Process the user's choice
         switch (choice) {
+ IT-499-Appoitments
+        case 1:
+            service.addAppointment();
+            break;
+        case 2:
+            service.displayAppointments();
+            break;
+        case 3:
+            service.clearAppointments();
+            break;
+        case 4:
+            std::cout << "Exiting the appointment service.\n";
+            break;
+        default:
+
         case 1: // Option to add an appointment
             service.addAppointment();
             break;
@@ -137,6 +164,7 @@ int main() {
             std::cout << "Exiting the appointment service.\n";
             break;
         default: // Handle invalid menu choices
+ master
             std::cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 4); // Continue until the user chooses to exit
