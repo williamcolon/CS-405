@@ -729,7 +729,9 @@ a:visited, span.MsoHyperlinkFollowed
 div.WordSection1
 	{page:WordSection1;}
 -->
-
+</style>
+<!--[if gte mso 10]>
+<style>
  /* Style Definitions */
  table.MsoNormalTable
 	{mso-style-name:"Table Normal";
